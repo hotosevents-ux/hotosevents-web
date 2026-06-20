@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedLock | Événements Privés Exclusifs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            background-color: var(--color-black);
+            color: var(--color-gold);
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+
+        .logo {
+            color: var(--color-white);
+        }
+
+        .logo span {
+            color: var(--color-red);
+        }
+
+        .nav-links a {
+            color: var(--color-white);
+        }
+
+        .nav-links a::after {
+            background-color: var(--color-gold);
+        }
+
+        .hamburger .bar {
+            background-color: var(--color-gold);
+        }
+
+        footer {
+            border-top: 1px solid var(--color-dark-grey);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="../assets/logo.png" alt="Logo Hotosevents">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="redlock.html" class="active" style="color: var(--color-gold);">RedLock</a></li>
+                    <li><a href="corporate.html">Corporate</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <div class="lang-switch">
+                            <a href="../redlock.html">EN</a>
+                            <a href="#" class="active">FR</a>
+                            <a href="../ar/redlock.html">AR</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero"
+            style="margin-top: 80px; height: 80vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../assets/redlock-bg.jpg') no-repeat center center/cover;">
+            <div class="container text-center reveal">
+                <h1 style="font-size: 4rem; color: var(--color-gold); margin-bottom: 0.5rem;">REDLOCK</h1>
+                <p
+                    style="font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3rem; color: var(--color-white);">
+                    Le Sanctuaire pour ceux qui sont Déjà Arrivés</p>
+                <div style="margin: 2rem auto 0; display: flex; justify-content: center; animation: bounce 2s infinite; width: fit-content; cursor: pointer;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2 style="font-size: 2.5rem; color: var(--color-white);">Faîtes Partie des Élus</h2>
+                        <p style="margin-bottom: 2rem; color: #ccc;">
+                            RedLock n'est pas pour tout le monde. C'est un sanctuaire pour l'élite, un conservateur de
+                            moments qui défient toute description. Des fêtes secrètes dans des villas à Marrakech aux
+                            rassemblements privés sur des yachts à Tanger, nous concevons des expériences qui n'existent
+                            que pour ceux qui détiennent la clé.
+                        </p>
+                        <ul style="margin-bottom: 2rem; color: var(--color-gold); list-style: none; padding-left: 0;">
+                            <li style="margin-bottom: 1rem;">✓ Réseautage au Sommet uniquement</li>
+                            <li style="margin-bottom: 1rem;">✓ Lieux privés Non Répertoriés</li>
+                            <li style="margin-bottom: 1rem;">✓ Discrétion Opérationnelle Absolue</li>
+                        </ul>
+                    </div>
+                    <div class="redlock-terminal reveal"
+                        style="flex: 1; min-width: 300px; background-color: #0a0a0a; padding: 2rem; border: 1px solid var(--color-gold); position: relative; overflow: hidden;">
+                        <!-- Terminal Header -->
+                        <div
+                            style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--color-gold); font-family: monospace; font-size: 0.8rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem;">
+                            <span>RedLock</span>
+                            <span id="terminal-time">00:00:00</span>
+                        </div>
+
+
+                        <!-- Integration du Wizard 3-Étapes (Thème Sombre) -->
+                        <div class="form-wizard-container form-wizard-dark">
+                            <!-- Points de Progression -->
+                            <div class="form-wizard-progress">
+                                <div class="form-wizard-dot active" data-step="1"></div>
+                                <div class="form-wizard-dot" data-step="2"></div>
+                                <div class="form-wizard-dot" data-step="3"></div>
+                            </div>
+
+                            <form id="hotosevents-form">
+                                <!-- ÉTAPE 1 : Identité -->
+                                <div class="form-wizard-step active" id="step-1">
+                                    <div class="form-wizard-grid-2">
+                                        <div class="form-wizard-field">
+                                            <input type="text" name="first_name" class="form-wizard-input" placeholder="Prénom" required>
+                                            <p class="form-wizard-error-text">Veuillez entrer votre prénom.</p>
+                                        </div>
+                                        <div class="form-wizard-field">
+                                            <input type="text" name="last_name" class="form-wizard-input" placeholder="Nom" required>
+                                            <p class="form-wizard-error-text">Veuillez entrer votre nom.</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-wizard-field">
+                                        <input type="email" name="email" class="form-wizard-input" placeholder="Votre Email" required>
+                                        <p class="form-wizard-error-text">Veuillez entrer une adresse email valide.</p>
+                                    </div>
+                                    <div class="form-wizard-field">
+                                        <input type="tel" name="phone" class="form-wizard-input" placeholder="Votre Numéro de Téléphone">
+                                    </div>
+                                    
+                                    <label class="form-wizard-role-label">Choisissez Votre Rôle</label>
+                                    <div class="form-wizard-role-grid">
+                                        <button type="button" class="form-wizard-pill" data-role="Entrepreneur">Je suis Entrepreneur</button>
+                                        <button type="button" class="form-wizard-pill" data-role="Student">Je suis Étudiant</button>
+                                        <button type="button" class="form-wizard-pill" data-role="Employee">Je suis Employé</button>
+                                        <button type="button" class="form-wizard-pill" data-role="Other">Autre</button>
+                                    </div>
+                                    <input type="hidden" name="role" id="selected-role" required>
+                                    <p class="form-wizard-role-error form-wizard-error-text">Veuillez sélectionner un rôle pour continuer.</p>
+
+                                    <div class="form-wizard-controls">
+                                        <div></div> <!-- Spacer -->
+                                        <button type="button" class="btn btn-redlock" id="next-1">SUIVANT ></button>
+                                    </div>
+                                </div>
+
+                                <!-- ÉTAPE 2 : Votre Histoire -->
+                                <div class="form-wizard-step" id="step-2">
+                                    <div class="form-wizard-field">
+                                        <label class="form-wizard-textarea-label">Parlez-nous de Vous</label>
+                                        <span class="form-wizard-textarea-sub">Dites-nous qui vous êtes — vos centres d'intérêt, vos passions, ce qui vous anime au quotidien.</span>
+                                        <textarea name="story" id="story-input" class="form-wizard-textarea" placeholder="Actuellement en train d'orchestrer..." required maxlength="500"></textarea>
+                                        <span class="form-wizard-counter"><span id="char-count">0</span> / 500</span>
+                                        <p class="form-wizard-error-text">Veuillez partager votre histoire.</p>
+                                    </div>
+
+                                    <div class="form-wizard-controls">
+                                        <button type="button" class="form-wizard-back" id="back-2">< RETOUR</button>
+                                        <button type="button" class="btn btn-redlock" id="next-2">SUIVANT ></button>
+                                    </div>
+                                </div>
+
+                                <!-- ÉTAPE 3 : Termes & Soumission -->
+                                <div class="form-wizard-step" id="step-3">
+                                    <div class="form-wizard-terms-box">
+                                        <details class="form-wizard-details">
+                                            <summary class="form-wizard-summary">Voir les Termes et Conditions</summary>
+                                            <div class="form-wizard-terms-text">
+                                                <p><strong>1. Nature de RedLock :</strong> RedLock est un réseau de membres privé opérant au sein du Royaume du Maroc. L'adhésion est accordée à l'entière discrétion de la direction.</p>
+                                                <p><strong>2. Code de conduite :</strong> Les membres doivent respecter la loi marocaine, l'ordre public et les institutions nationales. Tout comportement menaçant la stabilité, l'harmonie ou la sécurité est strictement interdit.</p>
+                                                <p><strong>3. Sujets politiques et sensibles :</strong> Aucune campagne politique, discours extrémiste, discussion déstabilisante ou critique des institutions nationales n'est autorisé lors des événements.</p>
+                                                <p><strong>4. Activités illégales :</strong> La consommation de drogue, la fraude, le blanchiment d'argent, le harcèlement, la violence ou les sollicitations financières illégales sont strictement interdits. Les violations peuvent être signalées aux autorités.</p>
+                                                <p><strong>5. Confidentialité :</strong> Les membres ne peuvent pas divulguer publiquement les lieux des événements, l'identité des membres ou des informations internes sans autorisation.</p>
+                                                <p><strong>6. Responsabilité :</strong> RedLock n'est pas responsable des accords privés, des transactions financières, des litiges ou des pertes personnelles entre les membres.</p>
+                                                <p><strong>7. Révocation de l'adhésion :</strong> RedLock se réserve le droit de révoquer l'adhésion à tout moment sans explication.</p>
+                                                <p><strong>8. Loi applicable :</strong> Ces conditions sont régies par les lois du Royaume du Maroc.</p>
+                                                <p><strong>9. Politique relative aux invités et responsabilité :</strong> Les privilèges d'adhésion sont strictement incessibles. Si un événement autorise un « Plus Un » (accompagnant), l'invité doit être pré-enregistré et approuvé. Le membre invitant assume la responsabilité absolue du comportement de son invité, et toute infraction commise par un invité sera traitée comme une infraction du membre.</p>
+                                                <p><strong>10. Non-sollicitation et réseautage :</strong> RedLock est un sanctuaire pour les connexions organiques. La sollicitation commerciale agressive, la distribution massive de cartes de visite ou le démarchage financier indésirable sont strictement interdits. Le réseautage doit rester respectueux, consensuel et aligné avec l'atmosphère de l'événement.</p>
+                                                <p><strong>11. Atmosphère et code vestimentaire :</strong> Les membres doivent adhérer aux codes vestimentaires prescrits et aux directives d'étiquette émises pour chaque événement spécifique. RedLock se réserve le droit de refuser l'entrée physique à tout membre ou invité qui ne répond pas aux normes esthétiques ou comportementales de l'environnement organisé.</p>
+                                                <p><strong>12. Droit de refus à l'entrée :</strong> Détenir une adhésion ou un billet d'événement ne remplace pas l'autorité opérationnelle de RedLock. La sécurité et la direction se réservent le droit de refuser l'entrée ou d'expulser toute personne arrivant en état d'ébriété, hostile ou perturbant l'harmonie de l'événement.</p>
+                                            </div>
+                                        </details>
+
+                                        <label class="form-wizard-checkbox-label">
+                                            <input type="checkbox" name="terms" class="form-wizard-checkbox" required>
+                                            <span>J'ai lu et j'accepte les Termes et Conditions</span>
+                                        </label>
+                                        <p class="form-wizard-error-text">Vous devez accepter les termes pour continuer.</p>
+                                    </div>
+
+                                    <div class="form-wizard-controls">
+                                        <button type="button" class="form-wizard-back" id="back-3">< RETOUR</button>
+                                        <button type="submit" class="btn btn-redlock form-wizard-submit">Rejoindre le Cercle Restreint</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <!-- État de Succès -->
+                            <div class="form-wizard-success" id="success-state">
+                                <svg class="form-wizard-icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14" />
+                                </svg>
+                                <h2 style="color: var(--color-gold);">Bienvenue dans le Cercle Restreint.</h2>
+                                <p style="color: #888;">Nous avons reçu vos informations et nous vous contacterons sous peu.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2 style="color: var(--color-white); margin-bottom: 1rem;">HOTOS<span>EVENTS</span></h2>
+            <div class="footer-links"
+                style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <a href="index.html">Accueil</a>
+                <a href="redlock.html">RedLock</a>
+                <a href="corporate.html">Corporate</a>
+                <a href="about.html">À Propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="../admin/strategy-blueprint.html" style="opacity: 0.3; font-size: 0.7rem;">[Admin]</a>
+            </div>
+            <p>&copy; 2026 Hotosevents. Tous Droits Réservés.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

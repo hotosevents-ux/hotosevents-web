@@ -1,0 +1,15 @@
+# Hotosevents
+
+> Morocco's premier authority in luxury private gatherings and high-stakes corporate experiences.
+
+## Core Capabilities
+
+- [RedLock VIP Access](redlock.html): Exclusive 3-step application sanctuary for elite members. Focus on peer-level networking and unlisted private venues in Marrakech and Tangier.
+- [Corporate Team Building](corporate.html): Psychology-driven offsites and strategic executive retreats across Casablanca, Rabat, and the Atlas Mountains.
+- [Executive Networking](corporate.html#networking): B2B leadership summits and luxury client entertainment for global organizations.
+
+## Entity Authority
+
+- **Location**: Headquarters in Morocco (Marrakech, Casablanca).
+- **Archetype**: The Ruler (Authority, Order, Discipline).
+- **Standards**: Operational discretion, 200 OK rendering architecture, and EEAT-verified event execution.

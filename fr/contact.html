@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Hotosevents | Initiation du Protocole</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        header {
+            background-color: var(--color-white);
+        }
+        .form-success-msg {
+            display: none;
+            background: rgba(46, 204, 113, 0.1);
+            color: #2ecc71;
+            padding: 1rem;
+            border-left: 4px solid #2ecc71;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="../assets/logo.png" alt="Logo Hotosevents">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="redlock.html">RedLock</a></li>
+                    <li><a href="corporate.html">Corporate</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="contact.html" class="active" style="color: var(--color-red);">Contact</a></li>
+                    <li>
+                        <div class="lang-switch">
+                            <a href="../contact.html">EN</a>
+                            <a href="#" class="active">FR</a>
+                            <a href="../ar/contact.html">AR</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-padding" style="margin-top: 80px;">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 4rem;">
+                    <h1 style="font-size: 3rem;">Initiation du Protocole</h1>
+                    <p style="max-width: 600px; margin: 0 auto; opacity: 0.7;">Choisissez votre canal de communication.</p>
+                </div>
+
+                <div style="display: flex; gap: 4rem; flex-wrap: wrap;">
+                    <!-- Contact Form -->
+                    <div style="flex: 2; min-width: 300px;">
+                        <h2 style="margin-bottom: 2rem;">Demandes Générales</h2>
+                        
+                        <div id="contact-success-msg" class="form-success-msg">
+                            Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.
+                        </div>
+
+                        <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div class="form-row-2">
+                                <div>
+                                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Nom</label>
+                                    <input type="text" id="cf-nom" required
+                                        style="width: 100%; padding: 1rem; border: 1px solid #ddd; background: #fff;">
+                                </div>
+                                <div>
+                                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Téléphone</label>
+                                    <input type="tel" id="cf-tel" required
+                                        style="width: 100%; padding: 1rem; border: 1px solid #ddd; background: #fff;">
+                                </div>
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email</label>
+                                <input type="email" id="cf-email" required
+                                    style="width: 100%; padding: 1rem; border: 1px solid #ddd; background: #fff;">
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Sujet</label>
+                                <select id="cf-sujet" required
+                                    style="width: 100%; padding: 1rem; border: 1px solid #ddd; background: #fff; font-family: inherit;">
+                                    <option value="" disabled selected>Sélectionner un sujet…</option>
+                                    <option value="RedLock">Division RedLock</option>
+                                    <option value="Corporate">Division Corporate</option>
+                                    <option value="Partenariat">Partenariat</option>
+                                    <option value="Autre">Autre</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message</label>
+                                <textarea rows="5" id="cf-message" required
+                                    style="width: 100%; padding: 1rem; border: 1px solid #ddd; background: #fff;"></textarea>
+                            </div>
+                            <button type="submit" id="contact-submit" class="btn btn-primary" style="align-self: flex-start;">Envoyer le Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Direct Contacts -->
+                    <div
+                        style="flex: 1; min-width: 300px; background-color: var(--color-navy); color: var(--color-white); padding: 3rem; align-self: flex-start;">
+                        <h3 style="margin-bottom: 2rem; color: var(--color-white);">Lignes Directes</h3>
+
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="color: var(--color-gold); font-size: 1.1rem; margin-bottom: 0.5rem;">Division RedLock</h4>
+                            <p style="margin-bottom: 0.5rem; color: #ccc;">Réservé aux membres et candidats.</p>
+                            <a href="mailto:access@redlock.ma" style="text-decoration: underline; color: var(--color-gold);">access@redlock.ma</a>
+                        </div>
+
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="color: #ccc; font-size: 1.1rem; margin-bottom: 0.5rem;">Division Corporate</h4>
+                            <p style="margin-bottom: 0.5rem; color: #ccc;">B2B et Partenariats.</p>
+                            <a href="mailto:corporate@hotosevents.ma"
+                                style="text-decoration: underline; color: #fff;">corporate@hotosevents.ma</a>
+                        </div>
+
+                        <div>
+                            <h4 style="color: #ccc; font-size: 1.1rem; margin-bottom: 0.5rem;">Siège Social</h4>
+                            <p style="color: #ccc;">Casablanca, Maroc</p>
+                            <p style="color: #ccc;">+212 5 22 00 00 00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2 style="color: var(--color-white); margin-bottom: 1rem;">HOTOS<span>EVENTS</span></h2>
+            <div class="footer-links"
+                style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <a href="index.html">Accueil</a>
+                <a href="redlock.html">RedLock</a>
+                <a href="corporate.html">Corporate</a>
+                <a href="about.html">À Propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="../admin/strategy-blueprint.html" style="opacity: 0.3; font-size: 0.7rem;">[Admin]</a>
+            </div>
+            <p>&copy; 2026 Hotosevents. Tous Droits Réservés.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script>
+        const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyMFWCOqUczcDodmHGl0XfTRWgeTbDixVUZwf-8JXyQDEz48fZ77k04gAbfqfiNIXoP/exec';
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('contact-submit');
+            btn.disabled = true;
+            btn.textContent = 'Envoi en cours…';
+
+            const payload = {
+                nom      : document.getElementById('cf-nom').value,
+                email    : document.getElementById('cf-email').value,
+                telephone: document.getElementById('cf-tel').value,
+                sujet    : document.getElementById('cf-sujet').value,
+                message  : document.getElementById('cf-message').value,
+                source   : 'fr/contact.html'
+            };
+
+            fetch(SHEET_URL, {
+                method : 'POST',
+                mode   : 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body   : JSON.stringify(payload)
+            })
+            .then(() => {
+                // Show success message and reset form
+                document.getElementById('contact-success-msg').style.display = 'block';
+                this.reset();
+                btn.disabled = false;
+                btn.textContent = 'Envoyer le Message';
+                window.scrollTo({ top: document.getElementById('contact-success-msg').offsetTop - 100, behavior: 'smooth' });
+            })
+            .catch((err) => {
+                console.error('Submission error:', err);
+                btn.disabled = false;
+                btn.textContent = 'Réessayer';
+                alert('Une erreur est survenue. Veuillez réessayer.');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1084 @@
+/* 
+   Hotosevents Design System 
+   Archetype: Ruler (Authority, Control, Order, Exclusivity)
+*/
+
+:root {
+    /* Brand Colors */
+    --color-red: #9E0B0F;
+    /* Blood Red */
+    --color-gold: #C5A572;
+    /* Gold (RedLock) */
+    --color-navy: #0A1931;
+    /* Navy (Corporate) */
+    --color-cream: #FAF9F6;
+    /* Cream (Background) */
+    --color-black: #000000;
+    /* Marketing Black */
+    --color-white: #FFFFFF;
+    --color-dark-grey: #1a1a1a;
+
+    /* Fonts */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+
+    /* Transitions */
+    --transition-base: 0.3s ease-in-out;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-cream);
+    color: var(--color-black);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-base);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Utility Classes */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.section-padding {
+    padding: var(--spacing-lg) 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.btn-primary {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.btn-redlock {
+    background-color: var(--color-black);
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+.btn-redlock:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+.btn-corporate {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+}
+
+.btn-corporate:hover {
+    background-color: var(--color-white);
+    color: var(--color-navy);
+    border-color: var(--color-navy);
+}
+
+/* Header & Nav */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(250, 249, 246, 0.95);
+    /* Cream with opacity */
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: var(--transition-base);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+    width: 60px;
+    /* Adjust size as needed */
+    height: auto;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 
+.logo span removed as we are using image 
+*/
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Scroll Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-red);
+    transition: var(--transition-base);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Mobile Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--color-black);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--color-cream);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+}
+
+/* Language Switcher */
+.lang-switch {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+
+.lang-switch a {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.lang-switch a:hover,
+.lang-switch a.active {
+    opacity: 1;
+    color: var(--color-red);
+}
+
+/* RTL Support (Arabic) */
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Tahoma', 'Segoe UI', sans-serif;
+    /* Fallback for Arabic */
+}
+
+[dir="rtl"] .nav-links {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+[dir="rtl"] .lang-switch {
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+[dir="rtl"] .hero-content {
+    direction: rtl;
+}
+
+/* Hero Background Video */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    /* Video at bottom of stack */
+}
+
+/* On mobile: poster is shown via the video element's poster attr,
+   video file is never downloaded — hide the empty video node cleanly */
+@media (max-width: 768px) {
+    .hero-video {
+        /* poster attribute still renders as background — keep it visible */
+        object-fit: cover;
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(158, 11, 15, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+    /* Slightly lighter overlay */
+    z-index: 2;
+    /* Overlay on top of video */
+    pointer-events: none;
+    /* Let clicks pass through if needed */
+}
+
+[dir="rtl"] .text-center {
+    text-align: center;
+}
+
+/* Fix for grid/flex in RTL if needed */
+[dir="rtl"] .nav-links a::after {
+    left: auto;
+    right: 0;
+}
+
+/* Responsive RTL */
+@media (max-width: 768px) {
+    [dir="rtl"] .nav-links {
+        left: auto;
+        right: -100%;
+        text-align: center;
+    }
+
+    [dir="rtl"] .nav-links.active {
+        right: 0;
+    }
+}
+
+/* RedLock Terminal Component */
+.redlock-terminal {
+    flex: 1;
+    min-width: 300px;
+    background-color: #050505;
+    background-image:
+        radial-gradient(circle at top right, rgba(197, 165, 114, 0.08), transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 30px 30px, 30px 30px;
+    padding: 2.5rem;
+    border: 1px solid var(--color-gold);
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(197, 165, 114, 0.1);
+    border-radius: 4px;
+}
+
+.redlock-terminal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    opacity: 0.5;
+    animation: scanline 4s linear infinite;
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100vh);
+        /* Just moves down */
+    }
+}
+
+.redlock-terminal .input-group input,
+.redlock-terminal .input-group textarea {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    padding: 1rem;
+    color: var(--color-white);
+    font-family: monospace;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.redlock-terminal .input-group input:focus,
+.redlock-terminal .input-group textarea:focus {
+    border-color: var(--color-gold);
+    background-color: rgba(197, 165, 114, 0.05);
+    box-shadow: 0 0 10px rgba(197, 165, 114, 0.1);
+}
+
+.redlock-terminal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    color: var(--color-gold);
+    font-family: monospace;
+    font-size: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.redlock-terminal h3 {
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-family: var(--font-heading);
+}
+
+.redlock-terminal label {
+    display: block;
+    color: #888;
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.redlock-terminal .encryption-status {
+    font-size: 0.7rem;
+    text-align: right;
+    margin-top: 1rem;
+    color: #444;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+/* --- Form Wizard Base --- */
+.form-wizard-container {
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    padding: 3rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-wizard-progress {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.form-wizard-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #eee;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-wizard-dot.active {
+    background-color: var(--color-red);
+    transform: scale(1.4);
+    box-shadow: 0 0 15px rgba(158, 11, 15, 0.2);
+}
+
+.form-wizard-step {
+    display: none;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.form-wizard-step.active {
+    display: block;
+}
+
+.form-wizard-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-wizard-field {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.form-wizard-input,
+.form-wizard-textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 1px solid #ddd;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-wizard-input:focus,
+.form-wizard-textarea:focus {
+    border-color: var(--color-red);
+}
+
+.form-wizard-input.form-wizard-error,
+.form-wizard-textarea.form-wizard-error {
+    border-color: var(--color-red) !important;
+}
+
+.form-wizard-error-text {
+    display: none;
+    color: var(--color-red);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+.form-wizard-role-label,
+.form-wizard-textarea-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.form-wizard-role-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.form-wizard-pill {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    background: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.form-wizard-pill:hover {
+    border-color: var(--color-red);
+    color: var(--color-red);
+}
+
+.form-wizard-pill.active {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border-color: var(--color-red);
+}
+
+.form-wizard-textarea {
+    height: 150px;
+    resize: none;
+}
+
+.form-wizard-textarea-sub {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.form-wizard-counter {
+    display: block;
+    text-align: right;
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 0.3rem;
+}
+
+.form-wizard-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.form-wizard-back {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.form-wizard-back:hover {
+    color: var(--color-red);
+}
+
+.form-wizard-success {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.form-wizard-success.visible {
+    display: flex;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.form-wizard-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+    color: var(--color-gold);
+}
+
+.form-wizard-terms-box {
+    margin-bottom: 2rem;
+}
+
+.form-wizard-details {
+    margin-bottom: 1.5rem;
+    border: 1px solid #eee;
+    padding: 1rem;
+}
+
+.form-wizard-summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.form-wizard-terms-text {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 1rem;
+    max-height: 150px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.form-wizard-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.form-wizard-checkbox {
+    margin-top: 0.3rem;
+}
+
+/* --- Dark variant for RedLock Terminal --- */
+.form-wizard-dark {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    min-height: auto !important;
+}
+
+.form-wizard-dark .form-wizard-progress {
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+}
+
+.form-wizard-dark .form-wizard-input,
+.form-wizard-dark .form-wizard-textarea {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    color: var(--color-white);
+    font-family: monospace;
+}
+
+.form-wizard-dark .form-wizard-input:focus,
+.form-wizard-dark .form-wizard-textarea:focus {
+    border-color: var(--color-gold);
+    background-color: rgba(197, 165, 114, 0.05);
+}
+
+.form-wizard-dark .form-wizard-input::placeholder,
+.form-wizard-dark .form-wizard-textarea::placeholder {
+    color: #444;
+}
+
+.form-wizard-dark .form-wizard-pill {
+    border-color: #333;
+    color: #888;
+}
+
+.form-wizard-dark .form-wizard-pill:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+}
+
+.form-wizard-dark .form-wizard-pill.active {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    background-color: rgba(197, 165, 114, 0.1);
+}
+
+.form-wizard-dark .form-wizard-role-label,
+.form-wizard-dark .form-wizard-textarea-label {
+    color: var(--color-white);
+    font-family: monospace;
+}
+
+.form-wizard-dark .form-wizard-textarea-sub {
+    color: #666;
+}
+
+.form-wizard-dark .form-wizard-back {
+    color: #666;
+}
+
+.form-wizard-dark .form-wizard-back:hover {
+    color: var(--color-gold);
+}
+
+.form-wizard-dark .form-wizard-counter {
+    color: #444;
+}
+
+.form-wizard-dark .form-wizard-success {
+    background-color: transparent;
+}
+
+.form-wizard-dark .form-wizard-dot {
+    background-color: #222;
+}
+
+.form-wizard-dark .form-wizard-dot.active {
+    background-color: var(--color-gold);
+    box-shadow: 0 0 15px rgba(197, 165, 114, 0.3);
+}
+
+.form-wizard-dark .form-wizard-details {
+    background-color: #0d0d0d;
+    border-color: #222;
+}
+
+.form-wizard-dark .form-wizard-summary {
+    color: var(--color-gold);
+}
+
+.form-wizard-dark .form-wizard-terms-text {
+    color: #888;
+}
+
+/* Success State Visibility */
+.form-wizard-success {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.form-wizard-success.visible {
+    display: flex !important;
+    opacity: 1;
+}
+
+/* --- Right-to-Left (RTL) Support --- */
+[dir="rtl"] .form-wizard-grid-2 {
+    direction: rtl;
+}
+
+[dir="rtl"] .form-wizard-controls {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .form-wizard-back {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+[dir="rtl"] .form-wizard-counter {
+    right: auto;
+    left: 1.2rem;
+}
+
+[dir="rtl"] .form-wizard-checkbox-label span {
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+[dir="rtl"] .redlock-terminal .encryption-status {
+    text-align: left;
+}
+
+/* --- Mobile Layout Improvements (Max-Width: 768px) --- */
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 2rem;
+        --spacing-xl: 3.5rem;
+    }
+
+    /* ── Typography ── */
+    h1 { font-size: 2.1rem !important; line-height: 1.15 !important; }
+    h2 { font-size: 1.6rem !important; }
+    h3 { font-size: 1.25rem !important; }
+    p  { font-size: 0.95rem !important; line-height: 1.65 !important; }
+
+    /* ── Layout ── */
+    .section-padding { padding: 2.25rem 0; }
+
+    .container {
+        width: 92%;
+        padding: 0 0.75rem;
+    }
+
+    /* ── Header ── */
+    header { padding: 0.6rem 0 !important; }
+
+    .logo { width: 46px; }
+
+    /* ── Nav dropdown ── */
+    .nav-links {
+        top: 60px;
+        padding: 0.25rem 0 0.75rem;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .nav-links li:last-child { border-bottom: none; }
+
+    .nav-links a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.83rem;
+    }
+
+    .lang-switch {
+        justify-content: center;
+        padding: 0.6rem 1.5rem;
+        margin-left: 0;
+    }
+
+    /* ── Hero ── */
+    .hero { height: 100svh !important; }
+
+    .hero-content { padding: 0 0.5rem; }
+
+    .hero-content h1 {
+        font-size: 2.1rem !important;
+        margin-bottom: 0.65rem !important;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem !important;
+        margin-bottom: 1.5rem !important;
+        max-width: 100% !important;
+    }
+
+    .hero-btns {
+        flex-direction: column !important;
+        width: 100%;
+        max-width: 240px;
+        margin: 0 auto;
+        gap: 0.65rem !important;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        font-size: 0.83rem;
+    }
+
+    /* ── Divisions ── */
+    .division-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .division-card {
+        padding: 1.75rem 1.25rem !important;
+        text-align: left !important;
+    }
+
+    .division-card h3 {
+        font-size: 1.4rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    .division-card p { margin-bottom: 1.1rem !important; }
+
+    /* ── About Intro ── */
+    .about-intro { padding: 2.25rem 0 !important; }
+    .about-intro h2 { margin-bottom: 0.6rem !important; }
+    .about-intro p  { margin-bottom: 1.25rem !important; }
+
+    /* ── RedLock Terminal ── */
+    .redlock-terminal {
+        padding: 1.1rem !important;
+        min-width: unset !important;
+    }
+
+    .redlock-terminal-header { font-size: 0.7rem; }
+
+    /* ── Form Wizard ── */
+    .form-wizard-container {
+        padding: 1.1rem !important;
+        min-height: auto !important;
+    }
+
+    .form-wizard-progress {
+        margin-bottom: 1.25rem;
+        gap: 1rem;
+    }
+
+    .form-wizard-dot { width: 8px; height: 8px; }
+    .form-wizard-dot.active { transform: scale(1.3); }
+
+    .form-wizard-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-wizard-field { margin-bottom: 1.1rem; }
+
+    .form-wizard-role-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        margin-bottom: 1.1rem;
+    }
+
+    .form-wizard-pill {
+        min-height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.82rem;
+    }
+
+    .form-wizard-textarea { min-height: 100px; }
+
+    .form-wizard-controls {
+        margin-top: 1.25rem;
+        flex-direction: column-reverse;
+        gap: 0.65rem;
+    }
+
+    .form-wizard-controls .btn {
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .form-wizard-back {
+        text-align: center;
+        width: 100%;
+        padding: 0.4rem;
+    }
+
+    /* ── Footer ── */
+    footer { padding: 1.75rem 0; }
+
+    footer h2 {
+        font-size: 1.3rem !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .footer-links {
+        gap: 0.9rem !important;
+        font-size: 0.83rem;
+        margin-bottom: 1.25rem !important;
+    }
+}
+
+/* Ultra-Small Screens (iPhone SE, etc.) */
+@media (max-width: 380px) {
+    h1 { font-size: 1.85rem !important; }
+
+    .form-wizard-container { padding: 0.9rem !important; }
+
+    .form-wizard-role-label { font-size: 0.75rem; }
+
+    .form-wizard-role-grid { grid-template-columns: 1fr; }
+
+    .hero-btns { max-width: 100%; }
+}
+
+/* Responsive grid for form rows with 2 inputs */
+.form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+@media (max-width: 600px) {
+    .form-row-2 {
+        grid-template-columns: 1fr;
+    }
+}

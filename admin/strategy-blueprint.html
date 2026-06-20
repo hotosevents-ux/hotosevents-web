@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotosEvents: Market Dominance Blueprint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            dark: '#1A1A1A',
+                            red: '#8B0000',
+                            light: '#FDFBF7',
+                            surface: '#FFFFFF'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FDFBF7; color: #1A1A1A; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40vh;
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 50vh; }
+        }
+        .ruler-border { border: 1px solid #D4AF37; }
+        .tab-active { border-bottom: 2px solid #8B0000; color: #8B0000; font-weight: 600; }
+        .accordion-content { transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
+        .accordion-content.open { max-height: 1000px; opacity: 1; }
+        
+        /* Admin Login Overlay */
+        #admin-gate {
+            position: fixed;
+            inset: 0;
+            background: #1A1A1A;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #D4AF37;
+            font-family: 'Cinzel', serif;
+        }
+        #admin-gate.hidden { display: none; }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <!-- Password Gate -->
+    <div id="admin-gate">
+        <div class="mb-8 text-3xl tracking-widest uppercase">HotosEvents <span class="text-white">Admin</span></div>
+        <div class="bg-white/5 p-8 rounded border border-brand-gold max-w-sm w-full">
+            <label class="block text-xs uppercase mb-2 tracking-widest text-gray-400">Security Clearance Required</label>
+            <input type="password" id="admin-pass" class="w-full bg-black/40 border border-brand-gold/30 p-3 text-white outline-none focus:border-brand-gold" placeholder="••••••••">
+            <button onclick="checkAccess()" class="w-full mt-4 bg-brand-gold text-black py-3 font-bold hover:bg-white transition uppercase tracking-widest">Authorize Access</button>
+            <p id="error-msg" class="text-brand-red text-xs mt-4 text-center hidden">Access Denied. Signature mismatch.</p>
+        </div>
+        <div class="mt-8 text-[10px] text-gray-600 uppercase tracking-widest">Confidential Strategic Protocol 01</div>
+    </div>
+
+    <!-- Protected Content Wrapper -->
+    <div id="blueprint-content" class="hidden">
+        <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <span class="font-serif text-2xl font-bold text-brand-dark tracking-wider">HOTOS<span class="text-brand-gold">EVENTS</span></span>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#vision" class="text-sm font-medium text-gray-600 hover:text-brand-red transition">Vision</a>
+                        <a href="#market" class="text-sm font-medium text-gray-600 hover:text-brand-red transition">Market Intelligence</a>
+                        <a href="#frameworks" class="text-sm font-medium text-gray-600 hover:text-brand-red transition">Strategic Frameworks</a>
+                        <a href="#funnels" class="text-sm font-medium text-gray-600 hover:text-brand-red transition">Service Funnels</a>
+                        <a href="#deliverables" class="text-sm font-medium text-brand-dark px-4 py-2 ruler-border rounded hover:bg-brand-gold hover:text-white transition">Deliverables & SEO</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="pt-24 pb-16">
+            
+            <section id="vision" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+                <div class="text-center max-w-4xl mx-auto">
+                    <p class="text-brand-gold font-semibold tracking-widest uppercase text-sm mb-2">The Ruler Blueprint</p>
+                    <h1 class="font-serif text-4xl md:text-5xl font-bold text-brand-dark mb-6 leading-tight">Engineering Elite Social Bonds in Morocco</h1>
+                    <p class="text-lg text-gray-600 mb-8">HotosEvents transcends traditional party planning. We are a Social Engineering Hub designed to solve the "Dry Networking" epidemic. By fusing high-level professional networking with high-energy exclusive environments, we convert brief encounters into lasting, high-ROI bonds for the C-Suite.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                        <div class="bg-white p-6 rounded-lg shadow-sm ruler-border text-center">
+                            <div class="text-3xl mb-3">&#9819;</div>
+                            <h3 class="font-serif font-bold text-xl mb-2">The Ruler Archetype</h3>
+                            <p class="text-sm text-gray-600">Positioning based on Luxury, Control, and Exclusive Authority.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm ruler-border text-center">
+                            <div class="text-3xl mb-3">&#128274;</div>
+                            <h3 class="font-serif font-bold text-xl mb-2">Selective Accessibility</h3>
+                            <p class="text-sm text-gray-600">Contact processes engineered as applications to an elite club.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm ruler-border text-center">
+                            <div class="text-3xl mb-3">&#127984;</div>
+                            <h3 class="font-serif font-bold text-xl mb-2">Moroccan Diyafa</h3>
+                            <p class="text-sm text-gray-600">Adapting traditional hospitality into a modern power move.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="market" class="bg-white py-16 border-y border-gray-200 mb-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-10 text-center">
+                        <h2 class="font-serif text-3xl font-bold text-brand-dark mb-4">Moroccan Competitive Intelligence</h2>
+                        <p class="max-w-3xl mx-auto text-gray-600">Analyzing the "Prestige Gap". Traditional networks (CGEM, BNI) suffer from the "Boredom Flaw"—lacking the emotional highs necessary for deep trust. HotosEvents occupies the Blue Ocean between stiff corporate meetings and chaotic nightlife.</p>
+                    </div>
+                    
+                    <div class="flex flex-col lg:flex-row items-center gap-12">
+                        <div class="w-full lg:w-1/2">
+                            <div class="chart-container">
+                                <canvas id="marketRadarChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 space-y-6">
+                            <div class="bg-brand-light p-6 rounded border-l-4 border-brand-red">
+                                <h4 class="font-bold text-lg mb-2">The "Boredom" Flaw</h4>
+                                <p class="text-sm text-gray-700">Moroccan corporate culture is inherently conservative. Traditional networking events reflect this stiffness, resulting in superficial interactions. Trust requires emotional resonance, which is absent in hotel conference rooms.</p>
+                            </div>
+                            <div class="bg-brand-light p-6 rounded border-l-4 border-brand-gold">
+                                <h4 class="font-bold text-lg mb-2">The HotosEvents Advantage</h4>
+                                <p class="text-sm text-gray-700">We sell "bonding through celebration." By introducing curated, high-end entertainment into professional spaces, we lower executive guardrails naturally, accelerating the transition from 'contact' to 'trusted associate'.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="frameworks" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+                <div class="mb-10 text-center">
+                    <h2 class="font-serif text-3xl font-bold text-brand-dark mb-4">Psychological Frameworks</h2>
+                    <p class="max-w-3xl mx-auto text-gray-600">The theoretical underpinning of the brand architecture, drawn from masterworks in marketing and influence.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="flex border-b border-gray-200 overflow-x-auto">
+                        <button class="flex-1 py-4 px-6 text-center font-medium tab-btn tab-active whitespace-nowrap" data-target="cialdini">Influence (Cialdini)</button>
+                        <button class="flex-1 py-4 px-6 text-center font-medium text-gray-500 hover:text-brand-dark tab-btn whitespace-nowrap" data-target="miller">StoryBrand (Miller)</button>
+                        <button class="flex-1 py-4 px-6 text-center font-medium text-gray-500 hover:text-brand-dark tab-btn whitespace-nowrap" data-target="ogilvy">Blue Ocean Strategy</button>
+                    </div>
+                    
+                    <div class="p-8">
+                        <div id="cialdini" class="tab-pane">
+                            <h3 class="font-serif text-2xl text-brand-red mb-4">Bypassing Corporate Skepticism</h3>
+                            <p class="mb-4">We leverage two primary principles of influence:</p>
+                            <ul class="list-none space-y-4">
+                                <li class="flex items-start">
+                                    <span class="text-brand-gold mr-3 text-xl">&#10003;</span>
+                                    <div>
+                                        <strong>Authority (The Ruler):</strong> The brand's visual scarcity, commanding tone, and elite vetting process establish HotosEvents as the unquestioned authority in high-level networking.
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-gold mr-3 text-xl">&#10003;</span>
+                                    <div>
+                                        <strong>Liking (The Party):</strong> High-energy environments trigger endorphins. When C-suite executives experience positive emotions together, cognitive association bonds those feelings to the people they are with.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div id="miller" class="tab-pane hidden">
+                            <h3 class="font-serif text-2xl text-brand-red mb-4">Positioning the Attendee</h3>
+                            <p class="mb-4">In the HotosEvents narrative, the brand is not the hero; the High-Net-Worth attendee is.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                                <div class="bg-gray-50 p-4 rounded">
+                                    <h4 class="font-bold mb-2">The Hero:</h4>
+                                    <p class="text-sm">The Moroccan CEO/Executive (The Ruler) seeking to expand their influence and secure their legacy.</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded">
+                                    <h4 class="font-bold mb-2">The Problem:</h4>
+                                    <p class="text-sm">Isolation at the top, surrounded by transactional relationships and "yes men".</p>
+                                </div>
+                                <div class="bg-brand-light p-4 rounded col-span-1 md:col-span-2 border border-brand-gold">
+                                    <h4 class="font-bold mb-2 text-brand-dark">The Guide (HotosEvents):</h4>
+                                    <p class="text-sm">Provides the exclusive arena (The Plan) where the hero can forge genuine peer-to-peer alliances, thereby expanding their 'kingdom' (Success).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="ogilvy" class="tab-pane hidden">
+                            <h3 class="font-serif text-2xl text-brand-red mb-4">Defining the Blue Ocean</h3>
+                            <p class="mb-6">HotosEvents creates an uncontested market space in Morocco by fusing two traditionally distinct concepts.</p>
+                            <div class="relative pt-10 pb-10">
+                                <div class="flex justify-between items-center w-full px-4 mb-2">
+                                    <div class="text-center w-1/3">
+                                        <div class="text-xs uppercase text-gray-500 mb-1">Red Ocean</div>
+                                        <div class="font-bold text-gray-800 bg-gray-100 py-2 rounded">Corporate Seminars</div>
+                                        <div class="text-xs text-gray-500 mt-1">High Trust / Low Energy</div>
+                                    </div>
+                                    <div class="text-center w-1/3 transform scale-110 z-10">
+                                        <div class="text-xs uppercase text-brand-gold font-bold mb-1">Blue Ocean</div>
+                                        <div class="font-bold text-white bg-brand-dark py-3 rounded shadow-lg border border-brand-gold">HotosEvents</div>
+                                        <div class="text-xs text-brand-red font-bold mt-1">High Trust / High Energy</div>
+                                    </div>
+                                    <div class="text-center w-1/3">
+                                        <div class="text-xs uppercase text-gray-500 mb-1">Red Ocean</div>
+                                        <div class="font-bold text-gray-800 bg-gray-100 py-2 rounded">Premium Nightclubs</div>
+                                        <div class="text-xs text-gray-500 mt-1">Low Trust / High Energy</div>
+                                    </div>
+                                </div>
+                                <div class="absolute top-1/2 left-0 w-full border-t border-dashed border-gray-300 -z-10"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="funnels" class="py-16 bg-brand-dark text-white mb-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-12 text-center">
+                        <h2 class="font-serif text-3xl font-bold text-brand-gold mb-4">Service-Specific Optimization</h2>
+                        <p class="max-w-3xl mx-auto text-gray-300">Conversion architectures designed specifically for the Moroccan elite and corporate directors.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        
+                        <div>
+                            <h3 class="text-2xl font-serif mb-6 text-white border-b border-brand-red pb-2">Division: RedLock (Private Elite)</h3>
+                            <p class="text-gray-400 text-sm mb-6">Target: The wealthy individual "too busy" for standard parties. Focus on "Efficiency of Bonding."</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-4 flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-brand-red flex items-center justify-center font-bold text-white">1</div>
+                                        <div class="h-full w-px bg-gray-700 my-2"></div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg text-brand-gold">The "Invisible" Landing Page</h4>
+                                        <p class="text-sm text-gray-300 mt-1">Minimalist dark design. No public pricing. Requires a referral code or LinkedIn verification to proceed.</p>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-4 flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-brand-red flex items-center justify-center font-bold text-white">2</div>
+                                        <div class="h-full w-px bg-gray-700 my-2"></div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg text-brand-gold">The "Audit" Questionnaire</h4>
+                                        <p class="text-sm text-gray-300 mt-1">Not a booking form. An inquiry into their network goals. "Who are you trying to meet in the next 12 months?"</p>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-4">
+                                        <div class="w-8 h-8 rounded-full bg-brand-red flex items-center justify-center font-bold text-white">3</div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg text-brand-gold">The Concierge Close</h4>
+                                        <p class="text-sm text-gray-300 mt-1">Personal outreach. Selling the ROI of time: "You could spend 6 months booking lunches, or attend one RedLock event."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-serif mb-6 text-white border-b border-brand-gold pb-2">Division: Corporate Team Building</h3>
+                            <p class="text-gray-400 text-sm mb-6">Target: HR Directors / CEOs. Language shift to "Performance Engineering."</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-4 flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-gray-700 text-brand-gold border border-brand-gold flex items-center justify-center font-bold">A</div>
+                                        <div class="h-full w-px bg-gray-700 my-2"></div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg text-white">Headline Reframe</h4>
+                                        <p class="text-sm text-gray-300 mt-1">From "Fun Staff Party" to "Executive Alignment & Retention Protocol."</p>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-4 flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-gray-700 text-brand-gold border border-brand-gold flex items-center justify-center font-bold">B</div>
+                                        <div class="h-full w-px bg-gray-700 my-2"></div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg text-white">The ROI Calculator Logic</h4>
+                                        <p class="text-sm text-gray-300 mt-1">Visual presentation showing cost of executive turnover vs. investment in high-impact internal bonding experiences.</p>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-4">
+                                        <div class="w-8 h-8 rounded-full bg-gray-700 text-brand-gold border border-brand-gold flex items-center justify-center font-bold">C</div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg text-white">The Proposal Stage</h4>
+                                        <p class="text-sm text-gray-300 mt-1">Delivered via secure link. Documents styled like high-level strategy briefs, not party menus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="deliverables" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-10 text-center">
+                    <h2 class="font-serif text-3xl font-bold text-brand-dark mb-4">Execution Deliverables & SEO</h2>
+                    <p class="text-gray-600">Specific assets to implement the strategy on the digital front.</p>
+                </div>
+
+                <div class="space-y-4">
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="accordion-btn w-full text-left px-6 py-4 font-bold text-lg flex justify-between items-center hover:bg-gray-50 transition">
+                            <span>1. The "Moroccan Elite" UX Audit (index.html)</span>
+                            <span class="text-xl transform transition-transform icon">+</span>
+                        </button>
+                        <div class="accordion-content bg-gray-50 border-t border-gray-200">
+                            <div class="p-6 text-sm text-gray-700 space-y-3">
+                                <p><strong>Immediate Changes Required:</strong></p>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Palette Consolidation:</strong> Strip out generic primary colors. Enforce strict Obsidian Black, Gold (#D4AF37), and Deep Crimson palette to enforce the Ruler archetype.</li>
+                                    <li><strong>Typography:</strong> Replace standard sans-serif with a commanding Serif (e.g., Cinzel or Playfair Display) for H1/H2.</li>
+                                    <li><strong>Hero Section Swap:</strong> Remove stock imagery of parties. Use abstract, high-contrast video backgrounds (e.g., pouring champagne, a sealed envelope, a handshake in low light) to build anticipation.</li>
+                                    <li><strong>Gatekeeping UX:</strong> The primary CTA should not be "Book Now". It must be "Request Invitation" or "Apply for Consultation".</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="accordion-btn w-full text-left px-6 py-4 font-bold text-lg flex justify-between items-center hover:bg-gray-50 transition">
+                            <span>2. The "Ruler’s Hook" Copywriting</span>
+                            <span class="text-xl transform transition-transform icon">+</span>
+                        </button>
+                        <div class="accordion-content bg-gray-50 border-t border-gray-200">
+                            <div class="p-6 text-sm text-gray-700">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div>
+                                        <h5 class="font-bold text-brand-dark mb-2 border-b pb-1">English</h5>
+                                        <p class="mb-2"><strong>Headline:</strong> Where Power Meets Celebration.</p>
+                                        <p class="mb-2"><strong>Subhead:</strong> We engineer environments where Morocco's elite forge unbreakable bonds.</p>
+                                        <p><strong>CTA:</strong> Request Access</p>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-brand-dark mb-2 border-b pb-1">Français</h5>
+                                        <p class="mb-2"><strong>Headline:</strong> L'Élégance du Réseau. La Force de l'Alliance.</p>
+                                        <p class="mb-2"><strong>Subhead:</strong> L'ingénierie sociale au service de l'élite dirigeante au Maroc.</p>
+                                        <p><strong>CTA:</strong> Demander une Invitation</p>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-brand-dark mb-2 border-b pb-1">العربية (Arabic)</h5>
+                                        <p class="mb-2"><strong>Headline:</strong> حيث تلتقي السلطة بالاحتفال.</p>
+                                        <p class="mb-2"><strong>Subhead:</strong> نصمم بيئات استثنائية لنخبة المغرب لبناء علاقات تدوم.</p>
+                                        <p><strong>CTA:</strong> طلب دعوة</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="accordion-btn w-full text-left px-6 py-4 font-bold text-lg flex justify-between items-center hover:bg-gray-50 transition">
+                            <span>3. Search Engine Optimization (SEO) Strategy</span>
+                            <span class="text-xl transform transition-transform icon">+</span>
+                        </button>
+                        <div class="accordion-content bg-gray-50 border-t border-gray-200">
+                            <div class="p-6 text-sm text-gray-700 space-y-4">
+                                <div>
+                                    <h5 class="font-bold text-brand-dark mb-1">Keyword Targeting (Niche & High Intent)</h5>
+                                    <p>Avoid generic terms like "event planner Morocco". Target: <em>"corporate team building Casablanca C-suite", "luxury networking events Marrakech", "private elite party planner Morocco", "executive offsite organization Rabat".</em></p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-brand-dark mb-1">On-Page Architecture</h5>
+                                    <p>Implement schema.org markup for 'Events' and 'Organization' to dominate rich snippets. Ensure a seamless tri-lingual architecture (domain.com/en, /fr, /ar) with localized meta titles that emphasize prestige.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-brand-dark mb-1">Content & Off-Page (The Authority Play)</h5>
+                                    <p>Publish whitepapers on the HotosEvents blog: e.g., "The ROI of Executive Bonding in Moroccan Enterprises". Distribute via PR to high-end business publications (L'Economiste, La Vie Éco) to build high-DR backlinks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="bg-brand-dark text-white py-8 text-center border-t border-brand-gold">
+            <p class="font-serif tracking-widest text-brand-gold text-lg mb-2">HOTOS<span class="text-white">EVENTS</span></p>
+            <p class="text-xs text-gray-500">Confidential Blueprint. Internal Use Only.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Security logic
+        function checkAccess() {
+            const pass = document.getElementById('admin-pass').value;
+            // The password is 'Ruler2024'
+            if (pass === 'Ruler2024') {
+                document.getElementById('admin-gate').classList.add('hidden');
+                document.getElementById('blueprint-content').classList.remove('hidden');
+                initCharts();
+            } else {
+                document.getElementById('error-msg').classList.remove('hidden');
+            }
+        }
+
+        // Initialize Blueprint features after access
+        function initCharts() {
+            // --- Chart.js Implementation ---
+            const ctx = document.getElementById('marketRadarChart').getContext('2d');
+            
+            Chart.defaults.color = '#4B5563';
+            Chart.defaults.font.family = "'Inter', sans-serif";
+
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Trust Building', 'Emotional Energy', 'Exclusivity/Prestige', 'Network Quality', 'Business Focus'],
+                    datasets: [
+                        {
+                            label: 'HotosEvents',
+                            data: [9, 10, 9, 8, 7],
+                            backgroundColor: 'rgba(212, 175, 55, 0.4)',
+                            borderColor: '#D4AF37',
+                            pointBackgroundColor: '#8B0000',
+                            pointBorderColor: '#fff',
+                            borderWidth: 2,
+                        },
+                        {
+                            label: 'Traditional Corporate Networking',
+                            data: [5, 2, 6, 8, 9],
+                            backgroundColor: 'rgba(156, 163, 175, 0.2)',
+                            borderColor: '#9CA3AF',
+                            borderWidth: 2,
+                            borderDash: [5, 5]
+                        },
+                        {
+                            label: 'Standard Premium Nightclub',
+                            data: [2, 9, 7, 4, 1],
+                            backgroundColor: 'rgba(26, 26, 26, 0.1)',
+                            borderColor: '#1A1A1A',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                            pointLabels: {
+                                font: { size: 12, weight: '600' },
+                                color: '#1A1A1A'
+                            },
+                            ticks: { display: false, min: 0, max: 10 }
+                        }
+                    }
+                }
+            });
+
+            // Tabs Logic
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabBtns.forEach(b => b.classList.remove('tab-active', 'text-brand-dark'));
+                    tabPanes.forEach(p => p.classList.add('hidden'));
+                    btn.classList.add('tab-active', 'text-brand-dark');
+                    document.getElementById(btn.getAttribute('data-target')).classList.remove('hidden');
+                });
+            });
+
+            // Accordion Logic
+            const accordions = document.querySelectorAll('.accordion-btn');
+            accordions.forEach(acc => {
+                acc.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.icon');
+                    if (content.classList.contains('open')) {
+                        content.classList.remove('open');
+                        icon.textContent = '+';
+                    } else {
+                        content.classList.add('open');
+                        icon.textContent = '−';
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

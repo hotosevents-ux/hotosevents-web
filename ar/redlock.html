@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ريدلوك | فعاليات خاصة حصرية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            background-color: var(--color-black);
+            color: var(--color-gold);
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+
+        .logo {
+            color: var(--color-white);
+        }
+
+        .logo span {
+            color: var(--color-red);
+        }
+
+        .nav-links a {
+            color: var(--color-white);
+        }
+
+        .nav-links a::after {
+            background-color: var(--color-gold);
+        }
+
+        .hamburger .bar {
+            background-color: var(--color-gold);
+        }
+
+        footer {
+            border-top: 1px solid var(--color-dark-grey);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="../assets/logo.png" alt="شعار هوتوس إيفنتس">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="redlock.html" class="active" style="color: var(--color-gold);">ريدلوك</a></li>
+                    <li><a href="corporate.html">للشركات</a></li>
+                    <li><a href="about.html">حولنا</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li>
+                        <div class="lang-switch">
+                            <a href="../redlock.html">EN</a>
+                            <a href="../fr/redlock.html">FR</a>
+                            <a href="#" class="active">AR</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero"
+            style="margin-top: 80px; height: 80vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../assets/redlock-bg.jpg') no-repeat center center/cover;">
+            <div class="container text-center reveal">
+                <h1 style="font-size: 4rem; color: var(--color-gold); margin-bottom: 0.5rem;">ريدلوك</h1>
+                <p
+                    style="font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3rem; color: var(--color-white);">
+                    الملاذ لمن وصلوا بالفعل</p>
+                <div style="margin: 2rem auto 0; display: flex; justify-content: center; animation: bounce 2s infinite; width: fit-content; cursor: pointer;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2 style="font-size: 2.5rem; color: var(--color-white);">كن واحداً من القلة</h2>
+                        <p style="margin-bottom: 2rem; color: #ccc;">
+                            ريدلوك ليست للجميع. إنها ملاذ للنخبة، وقيّم على لحظات تتحدى الوصف. من الحفلات السرية في
+                            فيلات مراكش إلى التجمعات الخاصة على اليخوت في طنجة، نحن نصمم تجارب لا توجد إلا لمن يملكون
+                            المفتاح.
+                        </p>
+                        <ul style="margin-bottom: 2rem; color: var(--color-gold); list-style: none; padding-right: 0;">
+                            <li style="margin-bottom: 1rem;">✓ شبكة تواصل للنخبة فقط</li>
+                            <li style="margin-bottom: 1rem;">✓ مواقع خاصة غير مدرجة</li>
+                            <li style="margin-bottom: 1rem;">✓ خصوصية تشغيلية مطلقة</li>
+                        </ul>
+                    </div>
+                    <div class="redlock-terminal reveal"
+                        style="flex: 1; min-width: 300px; background-color: #0a0a0a; padding: 2rem; border: 1px solid var(--color-gold); position: relative; overflow: hidden;">
+                        <!-- Terminal Header -->
+                        <div
+                            style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--color-gold); font-family: monospace; font-size: 0.8rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem;">
+                            <span>RedLock</span>
+                            <span id="terminal-time">00:00:00</span>
+                        </div>
+
+
+                        <!-- دمج معالج التحويل المكون من 3 خطوات (المظهر الداكن) -->
+                        <div class="form-wizard-container form-wizard-dark">
+                            <!-- نقاط التقدم -->
+                            <div class="form-wizard-progress">
+                                <div class="form-wizard-dot active" data-step="1"></div>
+                                <div class="form-wizard-dot" data-step="2"></div>
+                                <div class="form-wizard-dot" data-step="3"></div>
+                            </div>
+
+                            <form id="hotosevents-form">
+                                <!-- الخطوة 1: الهوية -->
+                                <div class="form-wizard-step active" id="step-1">
+                                    <div class="form-wizard-grid-2">
+                                        <div class="form-wizard-field">
+                                            <input type="text" name="first_name" class="form-wizard-input" placeholder="الاسم الأول" required>
+                                            <p class="form-wizard-error-text">يرجى إدخال اسمك الأول.</p>
+                                        </div>
+                                        <div class="form-wizard-field">
+                                            <input type="text" name="last_name" class="form-wizard-input" placeholder="الاسم الأخير" required>
+                                            <p class="form-wizard-error-text">يرجى إدخال اسمك الأخير.</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-wizard-field">
+                                        <input type="email" name="email" class="form-wizard-input" placeholder="بريدك الإلكتروني" required>
+                                        <p class="form-wizard-error-text">يرجى إدخال بريد إلكتروني صحيح.</p>
+                                    </div>
+                                    <div class="form-wizard-field">
+                                        <input type="tel" name="phone" class="form-wizard-input" placeholder="رقم هاتفك">
+                                    </div>
+                                    
+                                    <label class="form-wizard-role-label">اختر دورك</label>
+                                    <div class="form-wizard-role-grid">
+                                        <button type="button" class="form-wizard-pill" data-role="Entrepreneur">أنا رائد أعمال</button>
+                                        <button type="button" class="form-wizard-pill" data-role="Student">أنا طالب</button>
+                                        <button type="button" class="form-wizard-pill" data-role="Employee">أنا موظف</button>
+                                        <button type="button" class="form-wizard-pill" data-role="Other">شيء آخر</button>
+                                    </div>
+                                    <input type="hidden" name="role" id="selected-role" required>
+                                    <p class="form-wizard-role-error form-wizard-error-text">يرجى اختيار دور للمتابعة.</p>
+
+                                    <div class="form-wizard-controls">
+                                        <div></div> <!-- Spacer -->
+                                        <button type="button" class="btn btn-redlock" id="next-1">التالي <</button>
+                                    </div>
+                                </div>
+
+                                <!-- الخطوة 2: قصتك -->
+                                <div class="form-wizard-step" id="step-2">
+                                    <div class="form-wizard-field">
+                                        <label class="form-wizard-textarea-label">حدد مساهمتك</label>
+                                        <span class="form-wizard-textarea-sub">ساعدنا في الحفاظ على مستوى دائرتنا. شارك ما تضيفه—رؤيتك، طموحك، أو خبرتك.</span>
+                                        <textarea name="story" id="story-input" class="form-wizard-textarea" placeholder="أقوم حالياً بتنظيم..." required maxlength="500"></textarea>
+                                        <span class="form-wizard-counter"><span id="char-count">0</span> / 500</span>
+                                        <p class="form-wizard-error-text">يرجى مشاركة مساهمتك.</p>
+                                    </div>
+
+                                    <div class="form-wizard-controls">
+                                        <button type="button" class="form-wizard-back" id="back-2">> السابق</button>
+                                        <button type="button" class="btn btn-redlock" id="next-2">التالي <</button>
+                                    </div>
+                                </div>
+
+                                <!-- الخطوة 3: الشروط والإرسال -->
+                                <div class="form-wizard-step" id="step-3">
+                                    <div class="form-wizard-terms-box">
+                                        <details class="form-wizard-details">
+                                            <summary class="form-wizard-summary">عرض الشروط والأحكام</summary>
+                                            <div class="form-wizard-terms-text">
+                                                <p><strong>1. طبيعة RedLock:</strong> "RedLock" هي شبكة أعضاء خاصة تعمل داخل المملكة المغربية. تُمنح العضوية وفقاً للتقدير المطلق للإدارة.</p>
+                                                <p><strong>2. مدونة السلوك:</strong> يجب على الأعضاء احترام القانون المغربي والنظام العام والمؤسسات الوطنية. يُحظر تماماً أي سلوك يهدد الاستقرار أو الانسجام أو الأمن.</p>
+                                                <p><strong>3. المواضيع السياسية والحساسة:</strong> لا يُسمح بأي حملات سياسية، أو خطاب متطرف، أو نقاشات مزعزعة للاستقرار، أو انتقاد للمؤسسات الوطنية أثناء الفعاليات.</p>
+                                                <p><strong>4. الأنشطة غير القانونية:</strong> يُحظر تماماً تعاطي المخدرات، أو الاحتيال، أو غسيل الأموال، أو التحرش، أو العنف، أو الالتماس المالي غير القانوني. وقد يتم إبلاغ السلطات المختصة بأي انتهاكات.</p>
+                                                <p><strong>5. السرية:</strong> لا يجوز للأعضاء الكشف علناً عن مواقع الفعاليات، أو هويات الأعضاء، أو المعلومات الداخلية دون تصريح.</p>
+                                                <p><strong>6. المسؤولية:</strong> إن "RedLock" غير مسؤولة عن الاتفاقيات الخاصة، أو المعاملات المالية، أو النزاعات، أو الخسائر الشخصية بين الأعضاء.</p>
+                                                <p><strong>7. إلغاء العضوية:</strong> تحتفظ "RedLock" بالحق في إلغاء العضوية في أي وقت دون إبداء الأسباب.</p>
+                                                <p><strong>8. القانون المعمول به:</strong> تخضع هذه الشروط لقوانين المملكة المغربية.</p>
+                                                <p><strong>9. سياسة الضيوف والمسؤولية:</strong> امتيازات العضوية غير قابلة للتحويل على الإطلاق. إذا كانت الفعالية تسمح باصطحاب "مرافق" (Plus One)، فيجب تسجيل الضيف مسبقاً والموافقة عليه. يتحمل العضو الداعي المسؤولية المطلقة عن سلوك ضيفه، وسيتم التعامل مع أي مخالفة يرتكبها الضيف على أنها مخالفة من قبل العضو.</p>
+                                                <p><strong>10. عدم الالتماس المالي والتواصل:</strong> تُعد "RedLock" ملاذاً للتواصل العضوي (التلقائي). يُحظر تماماً الالتماس التجاري العدائي، أو التوزيع الجماعي لبطاقات العمل، أو العروض المالية غير المرغوب فيها. يجب أن يظل التواصل (Networking) محترماً ومتبادلاً ومتوافقاً مع أجواء الفعالية.</p>
+                                                <p><strong>11. الأجواء وقواعد اللباس:</strong> يجب على الأعضاء الالتزام بقواعد اللباس المحددة وإرشادات اللياقة (الإتيكيت) الصادرة لكل فعالية على حدة. تحتفظ "RedLock" بالحق في رفض الدخول الفعلي لأي عضو أو ضيف يفشل في تلبية المعايير الجمالية أو السلوكية للبيئة المنظمة.</p>
+                                                <p><strong>12. حق الرفض عند الدخول:</strong> إن امتلاك عضوية أو تذكرة فعالية لا يلغي السلطة التشغيلية لـ "RedLock". يحتفظ الأمن والإدارة بالحق في رفض دخول أو إبعاد أي فرد يصل وهو في حالة سكر، أو يتصرف بعدائية، أو يعطل انسجام الفعالية بأي شكل من الأشكال.</p>
+                                            </div>
+                                        </details>
+
+                                        <label class="form-wizard-checkbox-label">
+                                            <input type="checkbox" name="terms" class="form-wizard-checkbox" required>
+                                            <span>لقد قرأت وأوافق على الشروط والأحكام</span>
+                                        </label>
+                                        <p class="form-wizard-error-text">يجب عليك الموافقة على الشروط للمتابعة.</p>
+                                    </div>
+
+                                    <div class="form-wizard-controls">
+                                        <button type="button" class="form-wizard-back" id="back-3">> السابق</button>
+                                        <button type="submit" class="btn btn-redlock form-wizard-submit">انضم إلى الدائرة المقربة</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <!-- حالة النجاح -->
+                            <div class="form-wizard-success" id="success-state">
+                                <svg class="form-wizard-icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14" />
+                                </svg>
+                                <h2 style="color: var(--color-gold);">مرحباً بك في الدائرة المقربة.</h2>
+                                <p style="color: #888;">لقد استلمنا بياناتك وسنتواصل معك قريباً.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2 style="color: var(--color-white); margin-bottom: 1rem;">HOTOS<span>EVENTS</span></h2>
+            <div class="footer-links"
+                style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <a href="index.html">الرئيسية</a>
+                <a href="redlock.html">ريدلوك</a>
+                <a href="corporate.html">للشركات</a>
+                <a href="about.html">حولنا</a>
+                <a href="contact.html">اتصل بنا</a>
+                <a href="../admin/strategy-blueprint.html" style="opacity: 0.3; font-size: 0.7rem;">[Admin]</a>
+            </div>
+            <p>&copy; 2026 هوتوس إيفنتس. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>
