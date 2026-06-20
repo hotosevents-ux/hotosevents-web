@@ -296,7 +296,7 @@ footer p {
 
     .nav-links {
         position: fixed;
-        left: -100%;
+        left: -120%;
         top: 70px;
         gap: 0;
         flex-direction: column;
@@ -403,7 +403,7 @@ footer p {
 @media (max-width: 768px) {
     [dir="rtl"] .nav-links {
         left: auto;
-        right: -100%;
+        right: -120%;
         text-align: center;
     }
 
