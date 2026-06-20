@@ -1082,3 +1082,10 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/* Hide element on mobile devices */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
